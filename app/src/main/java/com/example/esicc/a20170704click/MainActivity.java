@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener onClickListenerstart;
     View.OnClickListener onClickListenerclick;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 start.setEnabled(false);
                 click.setEnabled(true);
 
-                new CountDownTimer(3000, 1000) {
+                new CountDownTimer(11000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
                         counter_time--;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         task2.putExtra("count",answer);
                         task2.setClass(MainActivity.this,Main2Activity.class);
                         startActivity(task2);
+                        MainActivity.this.finish();
                     }
                 }.start();
             }

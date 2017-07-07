@@ -36,6 +36,14 @@ public class Main2Activity extends AppCompatActivity {
     View.OnClickListener onClickListenerupdata;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        beck_link.setClass(Main2Activity.this, Main3Activity.class);
+        startActivity(beck_link);
+        Main2Activity.this.finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
@@ -49,11 +57,14 @@ public class Main2Activity extends AppCompatActivity {
         count = task2.getStringExtra("count");
         ans.setText(count);
 
+
+
         onClickListenerback = new View.OnClickListener() { //返回首頁
             @Override
             public void onClick(View v) {
                 beck_link.setClass(Main2Activity.this, Main3Activity.class);
                 startActivity(beck_link);
+                Main2Activity.this.finish();
             }
         };
         back.setOnClickListener(onClickListenerback);
@@ -272,7 +283,7 @@ public class Main2Activity extends AppCompatActivity {
                                 startActivity(name);
 
                                 Toast.makeText(getApplicationContext(), getString(R.string.hi) , Toast.LENGTH_SHORT).show();
-
+                                Main2Activity.this.finish();
                             }
                         })
                         .show();

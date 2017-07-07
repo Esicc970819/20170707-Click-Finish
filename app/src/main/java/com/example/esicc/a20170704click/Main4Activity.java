@@ -35,6 +35,14 @@ public class Main4Activity extends AppCompatActivity {
     View.OnClickListener onClickListenerback;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        beck_link.setClass(Main4Activity.this,Main3Activity.class);
+        startActivity(beck_link);
+        Main4Activity.this.finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
@@ -78,11 +86,14 @@ public class Main4Activity extends AppCompatActivity {
         no5_name.setText(name_data5.getString("id_name5",""));
         no5_score.setText(score_data5.getString("id_score5",""));
 
+
+
         onClickListenerback = new View.OnClickListener() { //返回首頁
             @Override
             public void onClick(View v) {
                 beck_link.setClass(Main4Activity.this,Main3Activity.class);
                 startActivity(beck_link);
+                Main4Activity.this.finish();
             }
         };
         back.setOnClickListener(onClickListenerback);

@@ -29,6 +29,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 play_link.setClass(Main3Activity.this,MainActivity.class);
                 startActivity(play_link);
+                Main3Activity.this.finish();
             }
         };
         play.setOnClickListener(onClickListenerplay);
@@ -38,6 +39,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 ranking_link.setClass(Main3Activity.this,Main4Activity.class);
                 startActivity(ranking_link);
+                Main3Activity.this.finish();
             }
         };
         ranking.setOnClickListener(onClickListenerranking);
